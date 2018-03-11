@@ -12,6 +12,9 @@
 		7D167263205552BA008B76CF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7D167261205552BA008B76CF /* Main.storyboard */; };
 		7D167265205552BA008B76CF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7D167264205552BA008B76CF /* Assets.xcassets */; };
 		7D167268205552BA008B76CF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7D167266205552BA008B76CF /* LaunchScreen.storyboard */; };
+		7D16727120557AC3008B76CF /* ServerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D16727020557AC3008B76CF /* ServerManager.swift */; };
+		7D16727420558949008B76CF /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D16727320558949008B76CF /* Category.swift */; };
+		8B6E2F0ED0B6A84498317073 /* Pods_AbadTrade.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C36AFA903FD85931D8410C4B /* Pods_AbadTrade.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +25,11 @@
 		7D167264205552BA008B76CF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7D167267205552BA008B76CF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7D167269205552BA008B76CF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7D16727020557AC3008B76CF /* ServerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerManager.swift; sourceTree = "<group>"; };
+		7D16727320558949008B76CF /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		9AE5AC647F49137A6C42933D /* Pods-AbadTrade.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AbadTrade.release.xcconfig"; path = "Pods/Target Support Files/Pods-AbadTrade/Pods-AbadTrade.release.xcconfig"; sourceTree = "<group>"; };
+		C36AFA903FD85931D8410C4B /* Pods_AbadTrade.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AbadTrade.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D2CCBC0AC0EEF969CD20787B /* Pods-AbadTrade.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AbadTrade.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AbadTrade/Pods-AbadTrade.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +37,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8B6E2F0ED0B6A84498317073 /* Pods_AbadTrade.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3F954BD8DF7934B7851F12D0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C36AFA903FD85931D8410C4B /* Pods_AbadTrade.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		7D167251205552B9008B76CF = {
 			isa = PBXGroup;
 			children = (
 				7D16725C205552BA008B76CF /* AbadTrade */,
 				7D16725B205552BA008B76CF /* Products */,
+				A82B87382A3B975CA7EB0615 /* Pods */,
+				3F954BD8DF7934B7851F12D0 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,6 +73,8 @@
 		7D16725C205552BA008B76CF /* AbadTrade */ = {
 			isa = PBXGroup;
 			children = (
+				7D16727220558924008B76CF /* Models */,
+				7D16726F20557A72008B76CF /* Network */,
 				7D16725D205552BA008B76CF /* AppDelegate.swift */,
 				7D16725F205552BA008B76CF /* ViewController.swift */,
 				7D167261205552BA008B76CF /* Main.storyboard */,
@@ -64,6 +85,31 @@
 			path = AbadTrade;
 			sourceTree = "<group>";
 		};
+		7D16726F20557A72008B76CF /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				7D16727020557AC3008B76CF /* ServerManager.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		7D16727220558924008B76CF /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				7D16727320558949008B76CF /* Category.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		A82B87382A3B975CA7EB0615 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D2CCBC0AC0EEF969CD20787B /* Pods-AbadTrade.debug.xcconfig */,
+				9AE5AC647F49137A6C42933D /* Pods-AbadTrade.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -71,9 +117,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7D16726C205552BA008B76CF /* Build configuration list for PBXNativeTarget "AbadTrade" */;
 			buildPhases = (
+				FFFE6F0752FE1D7E54BBFA5A /* [CP] Check Pods Manifest.lock */,
 				7D167256205552BA008B76CF /* Sources */,
 				7D167257205552BA008B76CF /* Frameworks */,
 				7D167258205552BA008B76CF /* Resources */,
+				1B6A75DA23B13F9450A2CEC9 /* [CP] Embed Pods Frameworks */,
+				FF726484C4F660784CE2AC48 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -131,13 +180,71 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		1B6A75DA23B13F9450A2CEC9 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-AbadTrade/Pods-AbadTrade-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AbadTrade/Pods-AbadTrade-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FF726484C4F660784CE2AC48 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AbadTrade/Pods-AbadTrade-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FFFE6F0752FE1D7E54BBFA5A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-AbadTrade-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		7D167256205552BA008B76CF /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				7D167260205552BA008B76CF /* ViewController.swift in Sources */,
+				7D16727120557AC3008B76CF /* ServerManager.swift in Sources */,
 				7D16725E205552BA008B76CF /* AppDelegate.swift in Sources */,
+				7D16727420558949008B76CF /* Category.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -272,6 +379,7 @@
 		};
 		7D16726D205552BA008B76CF /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D2CCBC0AC0EEF969CD20787B /* Pods-AbadTrade.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -286,6 +394,7 @@
 		};
 		7D16726E205552BA008B76CF /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9AE5AC647F49137A6C42933D /* Pods-AbadTrade.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
