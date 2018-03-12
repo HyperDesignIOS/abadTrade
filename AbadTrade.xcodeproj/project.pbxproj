@@ -85,6 +85,7 @@
 				7D16726F20557A72008B76CF /* Network */,
 				7D16725D205552BA008B76CF /* AppDelegate.swift */,
 				7D167261205552BA008B76CF /* Main.storyboard */,
+				7D20FB9020567D0A008E6C8E /* AbadTrade-Bridging-Header.h */,
 				7D167264205552BA008B76CF /* Assets.xcassets */,
 				7D167266205552BA008B76CF /* LaunchScreen.storyboard */,
 				7D167269205552BA008B76CF /* Info.plist */,
@@ -114,7 +115,6 @@
 			children = (
 				7D20FB9120567D0B008E6C8E /* SWRevealViewController.h */,
 				7D20FB9220567D0B008E6C8E /* SWRevealViewController.m */,
-				7D20FB9020567D0A008E6C8E /* AbadTrade-Bridging-Header.h */,
 			);
 			path = sideMenu;
 			sourceTree = "<group>";
@@ -122,8 +122,8 @@
 		7D20FB992056C178008E6C8E /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				7D20FB982056C11D008E6C8E /* sideMenu */,
 				7D20FB9420568179008E6C8E /* ViewController.swift */,
+				7D20FB982056C11D008E6C8E /* sideMenu */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
