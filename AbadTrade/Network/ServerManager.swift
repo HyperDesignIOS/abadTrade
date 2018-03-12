@@ -25,17 +25,28 @@ class serverManager {
             { response in
                 switch response.result
                 {
-                case .success:
-                    let value = response.result.value
-                    print(value!)
-                    let json = JSON(value!)
+                case .success(let value):
+                   // print (value)
+                    let json = response.result.value
                     var categoriesArray = [Category]()
-                    let dataJsonArray  =  json.array
-                    for item in dataJsonArray! {
+                    var imagesArray = [Image]()
+                    let dataJesonArray = JSON(json!).dictionaryObject
+                    
+                    let cat = dataJesonArray!["category"] as! [[String : Any]]
+                    
+                 
+                    for item in cat {
                         let category = Category.init(fromDictionary: item)
                         categoriesArray.append(category)
-                        print(category.nameEn)
+                       print(category.nameEn)
                     }
+                    let imgs = dataJesonArray!["images"] as! [[String : Any]]
+                    for img in imgs {
+                        let image = Image.init(fromDictionary: img)
+                        imagesArray.append(image)
+                       print(image.headerPhoto1)
+                    }
+                    
                     DispatchQueue.main.async
                         {
                             complation(categoriesArray, value)

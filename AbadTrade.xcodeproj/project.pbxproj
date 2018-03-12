@@ -8,25 +8,31 @@
 
 /* Begin PBXBuildFile section */
 		7D16725E205552BA008B76CF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D16725D205552BA008B76CF /* AppDelegate.swift */; };
-		7D167260205552BA008B76CF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D16725F205552BA008B76CF /* ViewController.swift */; };
 		7D167263205552BA008B76CF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7D167261205552BA008B76CF /* Main.storyboard */; };
 		7D167265205552BA008B76CF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7D167264205552BA008B76CF /* Assets.xcassets */; };
 		7D167268205552BA008B76CF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7D167266205552BA008B76CF /* LaunchScreen.storyboard */; };
 		7D16727120557AC3008B76CF /* ServerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D16727020557AC3008B76CF /* ServerManager.swift */; };
 		7D16727420558949008B76CF /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D16727320558949008B76CF /* Category.swift */; };
+		7D20FB9320567D0B008E6C8E /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D20FB9220567D0B008E6C8E /* SWRevealViewController.m */; };
+		7D20FB9520568179008E6C8E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D20FB9420568179008E6C8E /* ViewController.swift */; };
+		7D20FB972056A184008E6C8E /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D20FB962056A184008E6C8E /* Image.swift */; };
 		8B6E2F0ED0B6A84498317073 /* Pods_AbadTrade.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C36AFA903FD85931D8410C4B /* Pods_AbadTrade.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		7D16725A205552BA008B76CF /* AbadTrade.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AbadTrade.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D16725D205552BA008B76CF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		7D16725F205552BA008B76CF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		7D167262205552BA008B76CF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7D167264205552BA008B76CF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7D167267205552BA008B76CF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7D167269205552BA008B76CF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7D16727020557AC3008B76CF /* ServerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerManager.swift; sourceTree = "<group>"; };
 		7D16727320558949008B76CF /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		7D20FB9020567D0A008E6C8E /* AbadTrade-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AbadTrade-Bridging-Header.h"; sourceTree = "<group>"; };
+		7D20FB9120567D0B008E6C8E /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
+		7D20FB9220567D0B008E6C8E /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
+		7D20FB9420568179008E6C8E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		7D20FB962056A184008E6C8E /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
 		9AE5AC647F49137A6C42933D /* Pods-AbadTrade.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AbadTrade.release.xcconfig"; path = "Pods/Target Support Files/Pods-AbadTrade/Pods-AbadTrade.release.xcconfig"; sourceTree = "<group>"; };
 		C36AFA903FD85931D8410C4B /* Pods_AbadTrade.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AbadTrade.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2CCBC0AC0EEF969CD20787B /* Pods-AbadTrade.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AbadTrade.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AbadTrade/Pods-AbadTrade.debug.xcconfig"; sourceTree = "<group>"; };
@@ -76,11 +82,14 @@
 				7D16727220558924008B76CF /* Models */,
 				7D16726F20557A72008B76CF /* Network */,
 				7D16725D205552BA008B76CF /* AppDelegate.swift */,
-				7D16725F205552BA008B76CF /* ViewController.swift */,
 				7D167261205552BA008B76CF /* Main.storyboard */,
+				7D20FB9120567D0B008E6C8E /* SWRevealViewController.h */,
+				7D20FB9420568179008E6C8E /* ViewController.swift */,
+				7D20FB9220567D0B008E6C8E /* SWRevealViewController.m */,
 				7D167264205552BA008B76CF /* Assets.xcassets */,
 				7D167266205552BA008B76CF /* LaunchScreen.storyboard */,
 				7D167269205552BA008B76CF /* Info.plist */,
+				7D20FB9020567D0A008E6C8E /* AbadTrade-Bridging-Header.h */,
 			);
 			path = AbadTrade;
 			sourceTree = "<group>";
@@ -97,6 +106,7 @@
 			isa = PBXGroup;
 			children = (
 				7D16727320558949008B76CF /* Category.swift */,
+				7D20FB962056A184008E6C8E /* Image.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -145,6 +155,7 @@
 				TargetAttributes = {
 					7D167259205552BA008B76CF = {
 						CreatedOnToolsVersion = 9.1;
+						LastSwiftMigration = 0910;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -241,10 +252,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7D167260205552BA008B76CF /* ViewController.swift in Sources */,
+				7D20FB9520568179008E6C8E /* ViewController.swift in Sources */,
+				7D20FB972056A184008E6C8E /* Image.swift in Sources */,
 				7D16727120557AC3008B76CF /* ServerManager.swift in Sources */,
 				7D16725E205552BA008B76CF /* AppDelegate.swift in Sources */,
 				7D16727420558949008B76CF /* Category.swift in Sources */,
+				7D20FB9320567D0B008E6C8E /* SWRevealViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -382,11 +395,14 @@
 			baseConfigurationReference = D2CCBC0AC0EEF969CD20787B /* Pods-AbadTrade.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = AbadTrade/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.amr.net.AbadTrade;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "AbadTrade/AbadTrade-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -397,11 +413,13 @@
 			baseConfigurationReference = 9AE5AC647F49137A6C42933D /* Pods-AbadTrade.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = AbadTrade/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.amr.net.AbadTrade;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "AbadTrade/AbadTrade-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

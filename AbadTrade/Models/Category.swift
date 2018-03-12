@@ -19,10 +19,16 @@ class Category : NSObject, NSCoding{
     /**
      * Instantiate the instance using the passed dictionary values to set the properties values
      */
-    init(fromDictionary dictionary: JSON){
-        id = dictionary["id"].int
-        nameAr = dictionary["name_ar"].string
-        nameEn = dictionary["name_en"].string
+//    if let itemArray = dictionary["item"] as? [[String:Any]]{
+//        for dic in itemArray{
+//            let value = Item(fromDictionary: dic)
+//            item.append(value)
+//        }
+//    }
+    init(fromDictionary dictionary: [String : Any]){
+        id = dictionary["id"] as! Int
+        nameAr = dictionary["name_ar"] as! String
+        nameEn = dictionary["name_en"] as! String
     }
     
     /**
