@@ -23,6 +23,7 @@ class ViewController: UIViewController {
             print("error")
         }
         sideMenus ()
+        customizeNavigationController()
 
     }
     
@@ -32,13 +33,19 @@ class ViewController: UIViewController {
             
            menuButton.target = revealViewController()
             menuButton.action = #selector(SWRevealViewController.revealToggle(_:))
-            revealViewController().rearViewRevealWidth = 275
+            revealViewController().rearViewRevealWidth = 220
             revealViewController().rightViewRevealWidth = 160
             view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
             
         }
     }
-
+    
+    func customizeNavigationController (){
+        navigationController?.navigationBar.tintColor = UIColor.red
+        navigationController?.navigationBar.barTintColor = UIColor.red
+        navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.white]
+   
+    }
   
     
 
