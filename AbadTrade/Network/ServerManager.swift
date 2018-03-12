@@ -8,7 +8,7 @@
 
 import Foundation
 import Alamofire
-import SwiftyJSON
+
 
 enum ErrorCode:Int
 {
@@ -17,54 +17,49 @@ enum ErrorCode:Int
     case UnKnown = 000
 }
 
+public enum HTTPServerMethod: String {
+    case get     = "GET"
+    case post    = "POST"
+    case put     = "PUT"
+}
+
 class serverManager {
    
-    func getCategory(url : String , complation: @escaping (Any?, Any?) -> (), errorHandler: @escaping (ErrorCode, Any?) -> ()){
+    func connectForApiWith(url : String , mType : HTTPServerMethod , params : [String : Any]? , complation: @escaping (Any?) -> (), errorHandler: @escaping (ErrorCode, Any?) -> ()){
         
-        Alamofire.request(url).responseJSON
+        let httpMethod = HTTPMethod(rawValue: mType.rawValue)
+        Alamofire.request(url, method: httpMethod, parameters: params, encoding: URLEncoding.default, headers: HTTPHeaders?).responseJSON
             { response in
-                switch response.result
-                {
-                case .success(let value):
-                   // print (value)
-                    let json = response.result.value
-                    var categoriesArray = [Category]()
-                    var imagesArray = [Image]()
-                    let dataJesonArray = JSON(json!).dictionaryObject
-                    
-                    let cat = dataJesonArray!["category"] as! [[String : Any]]
-                    
-                 
-                    for item in cat {
-                        let category = Category.init(fromDictionary: item)
-                        categoriesArray.append(category)
-                       print(category.nameEn)
-                    }
-                    let imgs = dataJesonArray!["images"] as! [[String : Any]]
-                    for img in imgs {
-                        let image = Image.init(fromDictionary: img)
-                        imagesArray.append(image)
-                       print(image.headerPhoto1)
-                    }
-                    
-                    DispatchQueue.main.async
+                if response.result.error != nil{
+                    DispatchQueue.main.async{
+                        if let errorEnum = ErrorCode(rawValue: error._code)
                         {
-                            complation(categoriesArray, value)
-                    }
-                case .failure(let error):
-                    //print(error._code)
-                    print(error.localizedDescription)
-                    DispatchQueue.main.async
+                            errorHandler(errorEnum, error)
+                        }
+                        else
                         {
-                            if let errorEnum = ErrorCode(rawValue: error._code)
-                            {
-                                errorHandler(errorEnum, error)
-                            }
-                            else
-                            {
-                                errorHandler(ErrorCode(rawValue: 000)!, error)
-                            }
+                            errorHandler(ErrorCode(rawValue: 000)!, error)
+                        }
                     }
+                    return
+                }
+                
+                if response.data?.count == 0{
+                    DispatchQueue.main.async{
+                        if let errorEnum = ErrorCode(rawValue: error._code)
+                        {
+                            errorHandler(errorEnum, error)
+                        }
+                        else
+                        {
+                            errorHandler(ErrorCode(rawValue: 000)!, "No Data Retrived")
+                        }
+                    }
+                    return
+                }
+                
+                if (response.result.value != nil) {
+                    complation(response.value)
                 }
         }
     }

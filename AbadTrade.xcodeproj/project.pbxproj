@@ -79,7 +79,7 @@
 		7D16725C205552BA008B76CF /* AbadTrade */ = {
 			isa = PBXGroup;
 			children = (
-				7D20FB9A2056C1E2008E6C8E /* View */,
+				7D20FB9A2056C1E2008E6C8E /* Views */,
 				7D20FB992056C178008E6C8E /* Controller */,
 				7D16727220558924008B76CF /* Models */,
 				7D16726F20557A72008B76CF /* Network */,
@@ -88,6 +88,7 @@
 				7D167264205552BA008B76CF /* Assets.xcassets */,
 				7D167266205552BA008B76CF /* LaunchScreen.storyboard */,
 				7D167269205552BA008B76CF /* Info.plist */,
+				7D20FB9020567D0A008E6C8E /* AbadTrade-Bridging-Header.h */,
 			);
 			path = AbadTrade;
 			sourceTree = "<group>";
@@ -114,7 +115,6 @@
 			children = (
 				7D20FB9120567D0B008E6C8E /* SWRevealViewController.h */,
 				7D20FB9220567D0B008E6C8E /* SWRevealViewController.m */,
-				7D20FB9020567D0A008E6C8E /* AbadTrade-Bridging-Header.h */,
 			);
 			path = sideMenu;
 			sourceTree = "<group>";
@@ -128,11 +128,11 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
-		7D20FB9A2056C1E2008E6C8E /* View */ = {
+		7D20FB9A2056C1E2008E6C8E /* Views */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			path = View;
+			path = Views;
 			sourceTree = "<group>";
 		};
 		A82B87382A3B975CA7EB0615 /* Pods */ = {
