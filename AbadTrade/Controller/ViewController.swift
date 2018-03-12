@@ -7,21 +7,19 @@
 //
 
 import UIKit
+import SwiftyJSON
 
 class ViewController: UIViewController {
 
     @IBOutlet weak var menuButton: UIBarButtonItem!
+    
+    
+    var categoriesArray = [Category]()
+    var imagesArray = [Image]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        let sm = serverManager()
-        sm.getCategory(url: "http://hyper-design.com/Abad/api", complation: { (json, data) in
-            
-            if let obj = json {
-                print("ay 7aga")
-            }
-        }) { (error, msg) in
-            print("error")
-        }
+        
         sideMenus ()
         customizeNavigationController()
 
@@ -47,7 +45,31 @@ class ViewController: UIViewController {
    
     }
   
-    
+    func loadCategoriesAndImages(){
+        let sm = serverManager()
+        sm.connectForApiWith(url: "http://hyper-design.com/Abad/api", mType: HTTPServerMethod.get, params: [:], complation: { (json) in
+            
+            if let obj = json {
+                print (obj)
+                let dictionaryOfJson = JSON(json!).dictionaryObject
+                let categorys = dictionaryOfJson!["category"] as! [[String : Any]]
+                for cat in categorys {
+                    let category = Category.init(fromDictionary: cat)
+                    self.categoriesArray.append(category)
+                    print(category.nameEn)
+                }
+                let images = dictionaryOfJson!["images"] as! [[String : Any]]
+                for img in images {
+                    let image = Image.init(fromDictionary: img)
+                    self.imagesArray.append(image)
+                    print(image.headerPhoto1)
+                }
+                
+            }
+        }, errorHandler: { (error, msg) in
+            print("\(msg!)")
+        })
+    }
 
    
 
