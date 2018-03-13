@@ -28,17 +28,17 @@ class serverManager {
     func connectForApiWith(url : String , mType : HTTPServerMethod , params : [String : Any]? , complation: @escaping (Any?) -> (), errorHandler: @escaping (ErrorCode, Any?) -> ()){
         
         let httpMethod = HTTPMethod(rawValue: mType.rawValue)
-        Alamofire.request(url, method: httpMethod, parameters: params, encoding: URLEncoding.default, headers: HTTPHeaders?).responseJSON
+        Alamofire.request(url, method: httpMethod!, parameters: params, encoding: URLEncoding.default).responseJSON
             { response in
                 if response.result.error != nil{
                     DispatchQueue.main.async{
-                        if let errorEnum = ErrorCode(rawValue: error._code)
+                        if let errorEnum = ErrorCode(rawValue: (response.result.error?._code)!)
                         {
-                            errorHandler(errorEnum, error)
+                            errorHandler(errorEnum, response.result.error)
                         }
                         else
                         {
-                            errorHandler(ErrorCode(rawValue: 000)!, error)
+                            errorHandler(ErrorCode(rawValue: 000)!, response.result.error)
                         }
                     }
                     return
@@ -46,9 +46,9 @@ class serverManager {
                 
                 if response.data?.count == 0{
                     DispatchQueue.main.async{
-                        if let errorEnum = ErrorCode(rawValue: error._code)
+                        if let errorEnum = ErrorCode(rawValue: (response.result.error?._code)!)
                         {
-                            errorHandler(errorEnum, error)
+                            errorHandler(errorEnum, response.result.error)
                         }
                         else
                         {
